@@ -1,0 +1,76 @@
+<section class="login flex justify-center pt-24">
+    <div class="w-full max-w-xs">
+        <form action="/register" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    Name
+                </label>
+                <input name="name" 
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="name" type="text" placeholder="Enter your name">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="city">
+                    city
+                </label>
+                <input name="city"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    id="city" type="text" placeholder="Mumbai">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="contact">
+                    contact no
+                </label>
+                <input name="contact"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    id="contact" type="text" placeholder="1234567890">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+                    Email
+                </label>
+                <input name="email" 
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="name" type="email" placeholder="Enter your email">
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    Password
+                </label>
+                <input name="password"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                    id="password" type="password" placeholder="******************">
+            </div>
+
+            <div class="mb-6">
+         <span class="text-gray-700">Account Type</span>
+        <div class="mt-2">
+         <label class="inline-flex items-center">
+                  <input type="radio" class="form-radio" name="role" value="student">
+             <span class="ml-2">Student</span>
+         </label>
+         <label class="inline-flex items-center ml-6">
+           <input type="radio" class="form-radio" name="role" value="mentor">
+            <span class="ml-2">Mentor</span>
+          </label>
+  </div>
+</div>
+
+            <div class="flex items-center justify-between">
+                <button
+                    class="text-white bg-black rounded-full font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="submit">
+                    Register
+                </button>
+                <a class="inline-block align-baseline font-bold text-sm" href="/login">
+                    Already have account?
+                </a>
+            </div>
+        </form>
+        <p class="text-center text-gray-500 text-xs">
+            &copy;Designed and developed by keval
+        </p>
+    </div>
+</section>
