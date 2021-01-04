@@ -5,6 +5,7 @@ function homeController() {
         },
         sdashboard(req, res) {
             res.render('sdashboard')
+            
         },
         mdashboard(req, res) {
             res.render('mdashboard')

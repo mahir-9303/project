@@ -1,6 +1,12 @@
 const User = require('../../models/user')
 const bcrypt = require('bcrypt')
 const passport = require('passport')
+const session = require('../../../server.js')
+const cookieParser = require('cookie-parser')
+const express = require('express')
+let app = express()
+
+app.use(cookieParser)
 
 function authController() {
     return {
@@ -9,7 +15,7 @@ function authController() {
         },
 
 
-        postLogin(req, res, next) {
+        async postLogin(req, res, next) {
             const { email, password }   = req.body
            // Validate request 
             if(!email || !password) {
@@ -32,11 +38,23 @@ function authController() {
                     }
 
                     const a = user.role;
+
+                    
                     if(user.role == 'student'){
-                    	 return res.render('sdashboard')
+                          let hello = {
+                            name : "a",
+                            age: "5"
+
+                          }
+                          res.cookie("userData", hello)
+                          console.log(req.cookies)
+                    	  return res.redirect('/sdashboard');
+
+
+                        
                     }
                     else{
-                    	return res.render('mdashboard')
+                    	return res.render('mdashboard', { user: user })
                     }
                    
 
@@ -44,6 +62,7 @@ function authController() {
             })(req, res, next)
         },
 
+       
 
 
         register(req, res) {

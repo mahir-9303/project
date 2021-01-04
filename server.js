@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const ejs = require('ejs')
@@ -10,6 +11,10 @@ const flash = require('express-flash')
 const socketio = require('socket.io');
 const formatMessage = require('./utils/messages');
 const http = require('http');
+const session = require('express-session')
+const MongoDbStore = require('connect-mongo')(session)
+const bodyParser = require('body-parser');
+
 
 const {
   userJoin,
@@ -29,7 +34,31 @@ connection.once('open', () => {
     console.log('Connection failed...')
 });
 
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
+
+
+// Express body parser
+app.use(express.urlencoded({ extended: true }));
+
+
+// Session store 
+let mongoStore = new MongoDbStore({
+                mongooseConnection: connection,
+                collection: 'sessions'
+            })
+
+
+// Session config
+app.use(session({
+    secret: process.env.COOKIE_SECRET,
+    resave: false, 
+    store: mongoStore,
+    saveUninitialized: false, 
+    cookie: { maxAge: 1000 * 60 * 60 * 24 } // 24 hour 
+}))
 
 //passport config
 const passportInit = require('./app/config/passport')
@@ -43,6 +72,7 @@ app.use(express.json())
 //app.use(flash())
 
 
+//
 
 // set Template engine
 app.use(expressLayout)
