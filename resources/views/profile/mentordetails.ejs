@@ -1,0 +1,34 @@
+<% for(var i=0; i<hi.length; i++) {%>
+<% const a = localStorage.getItem('name'); %>
+      <% const b = JSON.parse(a); %>
+      <% const name = (b.name); %>
+      <% const description = (b.description) %>
+      <% const zip = (b.zip) %>
+
+
+<h1>
+
+<% if(hi[i].firstname == name ){ %>
+  <%= hi[i].firstname %>
+  <% } else { %>
+  
+  <% } %>
+    </h1>
+
+<h1>
+
+
+    <% if(hi[i].description == description ){ %>
+  <%= hi[i].description %>
+  <% } else { %>
+  
+  <% } %>
+
+<h1>
+     <% if(hi[i].zip == zip ){ %>
+  <%= hi[i].zip %>
+  <% } else { %>
+  
+  <% } %>
+</h1>
+<% } %>

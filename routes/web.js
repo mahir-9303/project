@@ -3,6 +3,7 @@ const authController = require('../app/http/controllers/authController')
 const chatController = require('../app/http/controllers/chatController')
 const eventController = require('../app/http/controllers/eventController')
 const blogController = require('../app/http/controllers/blogController')
+const profileController = require('../app/http/controllers/profileController')
 
 const guest = require('../app/http/middlewares/guest')
 
@@ -26,6 +27,11 @@ app.post('/createblog', blogController().postblog)
 app.get('/requestblog', blogController().requestblog)
 app.post('/requestblog', blogController().postrequestblog)
 app.get('/requestedblog', blogController().requestedblog)
+app.get('/editprofile', profileController().editprofile)
+app.post('/editprofile', profileController().postprofile)
+app.get('/listofmentors', profileController().listofmentors)
+app.get('/mentordetails', profileController().mentordetails)
+app.get('/temp', profileController().temp)
 
 
 }
