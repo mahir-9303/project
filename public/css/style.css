@@ -42,9 +42,12 @@ a {
 
 .chat-container {
     max-width: 1100px;
+    height: 600px;
     background: #fff;
     margin: 30px auto;
+    padding: 40px;
     overflow: hidden;
+    border-radius: 20px;
 }
 
 .chat-header {
@@ -81,20 +84,20 @@ a {
     margin-bottom: 15px;
 }
 
-.chat-sidebar ul li {
+.chat-sidebar li {
     padding: 10px 0;
 }
 
 .chat-messages {
     padding: 30px;
-    max-height: 500px;
-    overflow-y: scroll;
+    height: 400px;
+    overflow-y: auto;
 }
 
 .chat-messages .message {
     padding: 10px;
     margin-bottom: 15px;
-    background-color: var(--light-color);
+    background-color: #fff5f5;
     border-radius: 5px;
     overflow-wrap: break-word;
 }
@@ -102,13 +105,14 @@ a {
 .chat-messages .message .meta {
     font-size: 15px;
     font-weight: bold;
-    color: var(--dark-color-b);
+    color: #e53e3e;
     opacity: 0.7;
     margin-bottom: 7px;
 }
 
 .chat-messages .message .meta span {
     color: #777;
+    padding: 6px;
 }
 
 .chat-form-container {
