@@ -9,7 +9,10 @@ function homeController() {
         },
         mdashboard(req, res) {
             res.render('mdashboard')
-        }
+        },
+        error(req, res) {
+            res.render('error')
+        },
     }
 }
 

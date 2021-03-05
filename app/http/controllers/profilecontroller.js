@@ -54,7 +54,6 @@ res.render('/', { a: a })*/
         temp(req, res) {
             res.render('profile/temp')
 
-
         },
 
         postprofile(req, res) {

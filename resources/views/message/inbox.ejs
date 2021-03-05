@@ -1,0 +1,21 @@
+<section class="flex justify-center mt-24">
+        <table class="table-auto">
+          <thead>
+            <tr>
+              <th class="px-4 py-2">Name</th>
+              <th class="px-4 py-2">Message</th>
+              <th class="px-4 py-2">Action</th>
+              
+            </tr>
+          </thead>
+          <% for(var i=0; i<hi.length; i++) {%>
+          <tbody>
+            <tr class="bg-blue-100">
+              <td class="border px-4 py-2"><%= hi[i].name %></td>
+              <td class="border px-4 py-2"><%= hi[i].message %></td>
+              <td><a href="/chatwithmentor?username=<%= hi[i].name %>&room=<%= hi[i]._id %>">Reply</a></td>
+            </tr>
+          </tbody>
+          <% } %>
+        </table>
+  </section>

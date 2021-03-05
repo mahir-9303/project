@@ -4,6 +4,9 @@ const chatController = require('../app/http/controllers/chatController')
 const eventController = require('../app/http/controllers/eventController')
 const blogController = require('../app/http/controllers/blogController')
 const profileController = require('../app/http/controllers/profileController')
+const messageController = require('../app/http/controllers/messageController')
+const courseController = require('../app/http/controllers/courseController')
+
 
 const guest = require('../app/http/middlewares/guest')
 
@@ -32,6 +35,16 @@ app.post('/editprofile', profileController().postprofile)
 app.get('/listofmentors', profileController().listofmentors)
 app.get('/mentordetails', profileController().mentordetails)
 app.get('/temp', profileController().temp)
+app.get('/leaveamessage', messageController().index)
+app.post('/leaveamessage', messageController().postmessage)
+app.get('/inbox', messageController().inbox)
+app.get('/chatwithmentor', messageController().chatwithmentor)
+app.get('/courses', courseController().index)
+app.get('/addcourse', courseController().addcourse)
+app.get('/*', homeController().error)
+
+
+
 
 
 }
