@@ -1,28 +1,24 @@
-const Profile = require('../../models/profile')
-
+const Profile = require("../../models/profile");
 
 function profileController() {
-    return {
-        editprofile(req, res) {
-            res.render('profile/editprofile')
-        },
-        async listofmentors(req, res) {
-            const hi = await Profile.find()
-            
-            const param = req.query;
-            var LocalStorage = require('node-localstorage').LocalStorage;
-            localStorage = new LocalStorage('./scratch');
+  return {
+    editprofile(req, res) {
+      res.render("profile/editprofile");
+    },
+    async listofmentors(req, res) {
+      const hi = await Profile.find();
 
-            localStorage.setItem('name', JSON.stringify(param));
-            
+      const param = req.query;
+      var LocalStorage = require("node-localstorage").LocalStorage;
+      localStorage = new LocalStorage("./scratch");
 
-            res.render('profile/listofmentors', { hi: hi })
-        },
+      localStorage.setItem("name", JSON.stringify(param));
 
+      res.render("profile/listofmentors", { hi: hi });
+    },
 
-       async mentordetails(req, res) {
-
-            /*var MongoClient = require('mongodb').MongoClient;
+    async mentordetails(req, res) {
+      /*var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost/project";
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
@@ -38,52 +34,59 @@ MongoClient.connect(url, function(err, db) {
 const a = await hi;
 res.render('/', { a: a })*/
 
-        const hi = await Profile.find()
-            
-            const param = req.query;
-            var LocalStorage = require('node-localstorage').LocalStorage;
-            localStorage = new LocalStorage('./scratch');
+      const hi = await Profile.find();
 
-            localStorage.setItem('name', JSON.stringify(param));
-            
+      const param = req.query;
+      var LocalStorage = require("node-localstorage").LocalStorage;
+      localStorage = new LocalStorage("./scratch");
 
-            res.render('profile/mentordetails', { hi: hi })
-         
-            
-        },
-        temp(req, res) {
-            res.render('profile/temp')
+      localStorage.setItem("name", JSON.stringify(param));
 
-        },
+      res.render("profile/mentordetails", { hi: hi });
+    },
+    temp(req, res) {
+      res.render("profile/temp");
+    },
 
-        postprofile(req, res) {
+    postprofile(req, res) {
+      console.log(req.body);
 
-                        console.log(req.body)
+      const {
+        avatar,
+        firstname,
+        lastname,
+        description,
+        city,
+        state,
+        zip,
+        areaofexpertise,
+        contact,
+        accno,
+      } = req.body;
 
-                        const {avatar, firstname, lastname, description, city, state, zip, areaofexpertise, contact, accno} = req.body
+      const hello = new Profile({
+        avatar,
+        firstname,
+        lastname,
+        description,
+        city,
+        state,
+        zip,
+        areaofexpertise,
+        contact,
+        accno,
+      });
 
-                        const hello = new Profile({
-                         avatar, 
-                         firstname, 
-                         lastname, 
-                         description, 
-                         city, 
-                         state, 
-                         zip, 
-                         areaofexpertise, 
-                         contact, 
-                         accno
-                     })
-                        
-                            hello.save().then((hello) => {
-                        return res.redirect('/')
-                     }).catch(err => {
-                            return res.redirect('/editprofile')
-                     })          
-                    
-               
-              } 
-                }
-    }
+      hello
+        .save()
+        .then((hello) => {
+          return res.redirect("/");
+        })
+        .catch((err) => {
+          return res.redirect("/editprofile");
+        });
+    },
+  };
+}
 
-module.exports = profileController
+module.exports = profileController;
