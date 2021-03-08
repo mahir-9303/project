@@ -24,6 +24,9 @@ body {
 ul {
     list-style: none;
 }
+li {
+    padding-right:inherit;
+}
 
 a {
     text-decoration: none;
@@ -95,8 +98,9 @@ a {
 }
 
 .chat-messages .message {
+    max-width: fit-content;
     padding: 10px;
-    margin-bottom: 15px;
+    margin: 5px;
     background-color: #fff5f5;
     border-radius: 5px;
     overflow-wrap: break-word;
