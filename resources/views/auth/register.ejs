@@ -1,83 +1,97 @@
-<body class="bg-gray-300 min-h-screen py-6 md:py-5 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
-    
-    <main class="bg-white max-w-sm mx-auto p-8 md:p-12 my-4 rounded-2xl shadow-2xl">
-        <header class="max-w-lg mx-auto">
-          <a href="#">
-              <h1 class="text-4xl font-bold text-red-600 text-center">Register</h1>
-          </a>
-        </header>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animated Login Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 
-        <section class="mt-10">
-            <form action="/register" method="POST" class="flex flex-col">
-                <div class="mb-1 pt-1 rounded bg-transperent">
-                    <label class="block text-black text-xl font-bold mb-2" for="name">
-                        Name
-                    </label>
-                    <input name="name" 
-                        class="px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300 hover:bg-red-200 focus:outline-none focus:border-red-500 focus:bg-red-200 transition duration-200"
-                        id="name" type="text" placeholder="Enter your name">
-                </div>
-                <div class="mb-1 pt-1 rounded bg-transperent">
-                    <label class="block text-black text-xl font-bold mb-2" for="city">
-                        city
-                    </label>
-                    <input name="city"
-                        class="px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300 hover:bg-red-200 focus:outline-none focus:border-red-500 focus:bg-red-200 transition duration-200"
-                        id="city" type="text" placeholder="Mumbai">
-                </div>
-                <div class="mb-1 pt-1 rounded bg-transperent">
-                    <label class="block text-black text-xl font-bold mb-2" for="contact">
-                        contact no
-                    </label>
-                    <input name="contact"
-                        class="px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300 hover:bg-red-200 focus:outline-none focus:border-red-500 focus:bg-red-200 transition duration-200"
-                        id="contact" type="text" placeholder="1234567890">
-                </div>
-                <div class="mb-1 pt-1 rounded bg-transperent">
-                    <label class="block text-black text-xl font-bold mb-2" for="name">
-                        Email
-                    </label>
-                    <input name="email" 
-                        class="px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300 hover:bg-red-200 focus:outline-none focus:border-red-500 focus:bg-red-200 transition duration-200"
-                        id="name" type="email" placeholder="Enter your email">
-                </div>
-
-                <div class="mb-1 pt-1 rounded bg-transperent">
-                    <label class="block text-black text-xl font-bold mb-2" for="password">
-                        Password
-                    </label>
-                    <input name="password"
-                        class="px-3 py-1 bg-red-100 rounded w-full text-gray-700 border-b-4 border-red-300 hover:bg-red-200 focus:outline-none focus:border-red-500 focus:bg-red-200 transition duration-200"
-                        id="password" type="password" placeholder="•••••••••••••">
-                </div>
-
-                <div class="mb-1 pt-1 rounded bg-transperent">
-                    <lable class="block text-black text-xl font-bold mb-2">Account Type</lable>
-                    <div class="mt-2">
-                        <label class="ml-4 text-gray-700 text-m font-bold">
-                            <input type="radio" class="form-radio" name="role" value="student">
-                            <span class="ml-2">Student</span>
-                        </label>
-                        <label class="ml-4 text-gray-700 text-m font-bold">
-                            <input type="radio" class="form-radio" name="role" value="mentor">
-                            <span class="ml-2">Mentor</span>
-                        </label>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	
+	<div class="container">
+		<div class="img">
+			<img class=my-20 src="https://raw.githubusercontent.com/harshillukhi/images/ad9d04838093741c8e8c7df722fea6ae28269391/undraw_personalization_triu%20(1).svg">
+		</div>
+        
+		<div class="login-content">
+			<form action="/register" method="POST" >
+				
+				<h2 class="title"><b>Create account</b></h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Name</h5>
+           		   		<input name="name" type="text" class="input">
+           		   </div>
+           		</div>
+           		<div class="input-div one">
+           		   <div class="i"> 
+           		    	<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>City</h5>
+           		    	<input name="city" type="text" class="input" autocomplete="false">
+            	   </div>
+            	</div>
+                <div class="input-div one">
+                    <div class="i"> 
+                         <i class="fas fa-user"></i>
                     </div>
+                    <div class="div">
+                         <h5>Contact No.</h5>
+                         <input name="contact" type="text" class="input">
+                 </div>
+              </div>
+              <div class="input-div one">
+                <div class="i"> 
+                     <i class="fas fa-user"></i>
                 </div>
+                <div class="div">
+                     <h5>Email-id</h5>
+                     <input name="email" type="text" class="input">
+             </div>
+          </div>
+              
 
-                <div class="flex justify-center mt-4">
-                    <button
-                        class="w-full bg-red-600 text-white text-xl font-bold p-2 rounded-full shadow-lg hover:bg-red-500 hover:shadow-xl transition duration-200"
-                        type="submit">
-                        Register
-                    </button>
+                <div class="input-div pass">
+                    <div class="i"> 
+                         <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                         <h5>Password</h5>
+                         <input name="password" type="password" class="input">
+                 </div>
+              </div>
+           
+              <div class="mb-1 pt-1 rounded bg-trannsperet">
+                <lable class="mt-4 text-gray-700 text-x1 font-bold mb-2">Account Type</lable>
+                <div class="mt-2">
+                    <label class="ml-4 text-gray-700 text-m font">
+                        <input type="radio" class="form-radio" name="role" value="student">
+                        <span class="ml-2">Student</span>
+                    </label>
+                    <label class="ml-4 text-gray-700 text-m font">
+                        <input type="radio" class="form-radio" name="role" value="mentor">
+                        <span class="ml-2">Mentor</span>
+                    </label>
                 </div>
-                <div class="flex justify-end">
-                    <a class="mt-4 text-m text-black hover:text-red-600" href="/login">
-                        Already have account?
-                    </a>
-                </div>
+            </div>
+
+
+                
+            	
+            	<input type="submit" class="btn" value="Register">
+                <a href="login">Already have an account? Log in </a>
+
+                
             </form>
-        </section>
-    </main>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/main.js"></script>
 </body>
+</html>

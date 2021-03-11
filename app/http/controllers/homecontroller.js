@@ -1,7 +1,7 @@
 function homeController() {
   return {
     index(req, res) {
-      res.render("home");
+      res.render("../../home_page/index");
     },
     sdashboard(req, res) {
       res.render("sdashboard");
